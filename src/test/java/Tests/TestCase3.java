@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 //Search and verify results for item using an external file as input
 public class TestCase3 {
@@ -20,6 +21,7 @@ public class TestCase3 {
 
     @BeforeTest
     public void PageSetUp() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://automationpractice.com/");

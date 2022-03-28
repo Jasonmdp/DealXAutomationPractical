@@ -23,6 +23,7 @@ public class Testcase2 {
 
     @Test
     public void getResultFromSearchList() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         AutomationPracticePage page = new AutomationPracticePage(driver);
         //declare search word and result variable
         String searchCriteria = "dress,t-shirt, belt";

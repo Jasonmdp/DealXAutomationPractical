@@ -9,6 +9,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 //perform a search and verify the first result matches your search criteria.
 public class TestCase1 {
     WebDriver driver;
@@ -24,6 +26,7 @@ public class TestCase1 {
     @Test
     public void getResult()
     {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         AutomationPracticePage page = new AutomationPracticePage(driver);
         //declare search word and result variable
         String searchWord = "dress";

@@ -9,6 +9,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import java.math.BigDecimal;
+import java.util.concurrent.TimeUnit;
 
 public class TestCase5 {
     String username = "jasonmdp@gmail.com";
@@ -32,6 +33,7 @@ public class TestCase5 {
     @Test (priority = 1)
     public void login()
     {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         AutomationPracticePage page = new AutomationPracticePage(driver);
 
         page.clickSignInLink();

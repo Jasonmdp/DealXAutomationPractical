@@ -7,6 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
 //Sign in to the website using a username and password stored as a global variable.
 public class TestCase4 {
     String username = "jasonmdp@gmail.com";
@@ -15,6 +18,7 @@ public class TestCase4 {
 
     @BeforeTest
     public void PageSetUp() {
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("http://automationpractice.com/");
